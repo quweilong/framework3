@@ -10,10 +10,22 @@ See the License for the specific language governing permissions and limitations 
 """
 
 from django.conf.urls import patterns
+from django.conf.urls import url
+from . import views
+
+
 
 urlpatterns = patterns(
     'home_application.views',
     (r'^$', 'home'),
     (r'^dev-guide/$', 'dev_guide'),
     (r'^contactus/$', 'contactus'),
+    url(r'^home_page/$', views.home_page),  # 主机详情页面
+    url(r'^save_info/$', views.save_info),  # 保存信息
+    url(r'^all_info/$', views.all_info),  # 保存信息
+    url(r'^get_profile_information/$', views.get_profile_information),  # 获取列表
+    url(r'^delInfo/$', views.delInfo),  # 删除数据
+    url(r'^getEditInfo/$', views.getEditInfo),  # 获取编辑数据
+    url(r'^get_list/$', views.get_list),  # 获取编辑数据
+
 )
